@@ -1,0 +1,47 @@
+<html>
+<head>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+  google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawChart);
+
+//var data = ['Dallas','Roll','4.0','Dallas','Charge 3','3.0','chicago','WF-1000X','5.0','chicago','iPhone 7 Plus','1.0','dallas','Envy x360','1.0','atlanta','Series 2','5.0','atlanta','Gear 3','4.0'];
+
+
+
+
+function drawChart() {
+
+var data = new google.visualization.DataTable();
+data.addColumn('string', 'Department');
+data.addColumn('number', 'Revenues Change');
+data.addRows([
+  ['Shoes', {v:12, f:'12.0%'}],
+  ['Sports', {v:-7.3, f:'-7.3%'}],
+  ['Toys', {v:0, f:'0%'}],
+  ['Electronics', {v:-2.1, f:'-2.1%'}],
+  ['Food', {v:22, f:'22.0%'}]
+]);
+       
+     //var chartData=google.visualization.arrayToDataTable(data);
+	 
+  var options = {'width':600,
+				'height':650,
+				chart:{
+					title:'Trending Products Chart',
+					subtitle: "test",
+				},
+				bars:'horizontal'
+  };
+  var chart= new google.visualization.BarChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+      }
+    </script>
+
+	</head>
+	<body>
+	<div id='chart_div' style='width:900px'; 'height:500px';'></div>
+	</body>
+	</html>
+	
